@@ -13,7 +13,7 @@ export default function LoginScreen() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const { signIn } = useAuth();
+  const { signIn, playAsGuest } = useAuth();
 
   async function handleLogin() {
     if (!email.trim() || !password.trim()) {
@@ -83,6 +83,20 @@ export default function LoginScreen() {
             <Text style={styles.switchText}>Don't have an account? </Text>
             <Text style={[styles.switchText, styles.link]}>Sign up</Text>
           </TouchableOpacity>
+
+          <View style={styles.dividerRow}>
+            <View style={styles.divider} />
+            <Text style={styles.dividerText}>or</Text>
+            <View style={styles.divider} />
+          </View>
+
+          <Button
+            label="CONTINUE AS GUEST"
+            onPress={() => { playAsGuest(); router.replace('/onboarding'); }}
+            variant="outline"
+            size="md"
+            icon="♟️"
+          />
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
@@ -137,4 +151,7 @@ const styles = StyleSheet.create({
   switchRow: { flexDirection: 'row', justifyContent: 'center', marginTop: 8 },
   switchText: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
   link: { color: Colors.secondary, fontWeight: Typography.weights.bold },
+  dividerRow: { flexDirection: 'row', alignItems: 'center', gap: 12, marginVertical: 4 },
+  divider: { flex: 1, height: 1, backgroundColor: Colors.bgBorder },
+  dividerText: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
 });

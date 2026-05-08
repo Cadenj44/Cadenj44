@@ -11,19 +11,31 @@ export function useAuth() {
   const { setProgress, reset } = useGameStore();
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-      setUser(data.session?.user ?? null);
-      if (data.session?.user) loadProgress(data.session.user.id);
-      else { reset(); setLoading(false); }
-    });
+    supabase.auth.getSession()
+      .then(({ data }) => {
+        setSession(data.session);
+        setUser(data.session?.user ?? null);
+        if (data.session?.user) loadProgress(data.session.user.id);
+        else { reset(); setLoading(false); }
+      })
+      .catch(() => {
+        // Supabase not configured or network error — fall through as guest
+        reset();
+        setLoading(false);
+      });
 
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-      setUser(session?.user ?? null);
-      if (session?.user) loadProgress(session.user.id);
-      else { reset(); setLoading(false); }
-    });
+    let subscription: { unsubscribe: () => void } = { unsubscribe: () => {} };
+    try {
+      const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session);
+        setUser(session?.user ?? null);
+        if (session?.user) loadProgress(session.user.id);
+        else { reset(); setLoading(false); }
+      });
+      subscription = data.subscription;
+    } catch {
+      // ignore if Supabase not configured
+    }
 
     return () => subscription.unsubscribe();
   }, []);
@@ -89,8 +101,18 @@ export function useAuth() {
   }
 
   async function signOut() {
-    await supabase.auth.signOut();
+    try { await supabase.auth.signOut(); } catch {}
+    reset();
+    setSession(null);
+    setUser(null);
   }
 
-  return { session, user, loading, signUp, signIn, signOut };
+  function playAsGuest() {
+    reset();
+    setSession(null);
+    setUser(null);
+    setLoading(false);
+  }
+
+  return { session, user, loading, signUp, signIn, signOut, playAsGuest };
 }
