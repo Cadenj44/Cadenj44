@@ -16,6 +16,7 @@ export default function RootLayout() {
           <Stack.Screen name="onboarding" />
           <Stack.Screen name="lesson/[id]" options={{ animation: 'slide_from_right' }} />
           <Stack.Screen name="puzzle/[id]" options={{ animation: 'slide_from_bottom' }} />
+          <Stack.Screen name="game/index"  options={{ animation: 'slide_from_bottom', contentStyle: { backgroundColor: '#080c18' } }} />
         </Stack>
       </SafeAreaProvider>
     </GestureHandlerRootView>
