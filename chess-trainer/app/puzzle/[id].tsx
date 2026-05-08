@@ -6,6 +6,7 @@ import {
 import { useLocalSearchParams, router } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import * as Haptics from 'expo-haptics';
+import { playCorrect, playError, playTap } from '@/lib/sounds';
 import { Colors, Typography, Spacing, Radius } from '@/constants/theme';
 import ChessBoard from '@/components/chess/ChessBoard';
 import CelebrationOverlay from '@/components/ui/CelebrationOverlay';
@@ -67,6 +68,7 @@ export default function PuzzleScreen() {
   }
 
   async function handleComplete() {
+    playCorrect();
     await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
     const earned = Math.max(XP_FOR_PUZZLE - hintsUsed * XP_HINT_PENALTY, 5);
     setXpEarned(earned);
@@ -77,6 +79,7 @@ export default function PuzzleScreen() {
 
   async function handleWrong() {
     await Haptics.notificationAsync(Haptics.NotificationFeedbackType.Error);
+    playError();
     setWrongFlash(true);
     useHeart();
     setTimeout(() => setWrongFlash(false), 800);
