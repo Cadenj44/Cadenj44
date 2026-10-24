@@ -70,9 +70,9 @@ export default function MoveHistory({ moves, compact = false }: MoveHistoryProps
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#0d1120',
+    backgroundColor: '#f5f0e8',
     borderTopWidth: 1,
-    borderTopColor: '#1e2555',
+    borderTopColor: '#c8bfa8',
     maxHeight: 130,
   },
   containerCompact: { maxHeight: 48 },
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 3,
     borderBottomWidth: 1,
-    borderBottomColor: '#1a2040',
+    borderBottomColor: '#c8bfa8',
     gap: 4,
   },
   rowLast: { borderBottomWidth: 0 },
@@ -106,13 +106,13 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     borderRadius: Radius.sm,
   },
-  moveCellActive: { backgroundColor: '#2a3a70' },
+  moveCellActive: { backgroundColor: '#c8d8c0' },
   moveText: {
     fontSize: Typography.sizes.sm,
     fontWeight: Typography.weights.semibold,
   },
-  whiteMoveText: { color: '#f0f0f0' },
-  blackMoveText: { color: '#b0b8d0' },
+  whiteMoveText: { color: '#1a1208' },
+  blackMoveText: { color: '#3d3020' },
   // Compact
   compactRow: { flexDirection: 'row', alignItems: 'center', gap: 6, paddingVertical: 8, paddingHorizontal: 8 },
   compactPair: { flexDirection: 'row', alignItems: 'center', gap: 3 },

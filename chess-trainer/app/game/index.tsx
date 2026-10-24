@@ -20,12 +20,12 @@ import { playCorrect, playError, playTap, playUnlock } from '@/lib/sounds';
 const COACH_CONFIG: Record<CoachEval['classification'], {
   label: string; symbol: string; color: string; bg: string;
 }> = {
-  best:       { label: 'Best move!',   symbol: '✦',   color: '#00e676', bg: '#00e67622' },
-  excellent:  { label: 'Excellent!',   symbol: '✦',   color: '#69f0ae', bg: '#69f0ae22' },
-  good:       { label: 'Good',         symbol: '▲',   color: '#b9f6ca', bg: '#b9f6ca22' },
-  inaccuracy: { label: 'Inaccuracy',   symbol: '△',   color: '#FFD700', bg: '#FFD70022' },
-  mistake:    { label: 'Mistake',      symbol: '✗',   color: '#FF9600', bg: '#FF960022' },
-  blunder:    { label: 'Blunder!',     symbol: '✗✗',  color: '#FF4B4B', bg: '#FF4B4B22' },
+  best:       { label: 'Best move!',   symbol: '✦',   color: '#1a6040', bg: '#1a604022' },
+  excellent:  { label: 'Excellent!',   symbol: '✦',   color: '#2a7050', bg: '#2a705022' },
+  good:       { label: 'Good',         symbol: '▲',   color: '#3a8060', bg: '#3a806022' },
+  inaccuracy: { label: 'Inaccuracy',   symbol: '△',   color: '#7a5a10', bg: '#7a5a1022' },
+  mistake:    { label: 'Mistake',      symbol: '✗',   color: '#8a4a10', bg: '#8a4a1022' },
+  blunder:    { label: 'Blunder!',     symbol: '✗✗',  color: '#8a2020', bg: '#8a202022' },
 };
 
 const DIFFICULTY_LABELS: Record<string, { name: string; rating: string }> = {
@@ -317,7 +317,7 @@ export default function GameScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.fill} edges={['top', 'bottom']}>
 
         {/* Top bar */}
@@ -469,9 +469,9 @@ function GameOverModal({
   }, [visible]);
 
   const cfg = {
-    win:  { emoji: '🏆', title: 'You Won!',   color: Colors.gold,    bg: '#2a2000' },
-    lose: { emoji: '💀', title: 'You Lost',   color: Colors.error,   bg: '#2a0000' },
-    draw: { emoji: '🤝', title: 'Draw!',       color: Colors.textSecondary, bg: '#1a1a2a' },
+    win:  { emoji: '🏆', title: 'You Won!',   color: Colors.gold,    bg: '#f0e8d0' },
+    lose: { emoji: '💀', title: 'You Lost',   color: Colors.error,   bg: '#f0d8d8' },
+    draw: { emoji: '🤝', title: 'Draw!',       color: Colors.textSecondary, bg: '#e8e8ee' },
   }[result];
 
   if (!visible) return null;
@@ -504,7 +504,7 @@ function GameOverModal({
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#080c18' },
+  root: { flex: 1, backgroundColor: '#f5f0e8' },
   fill: { flex: 1 },
 
   topBar: {
@@ -513,18 +513,18 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 8,
     borderBottomWidth: 1,
-    borderBottomColor: '#1e2555',
+    borderBottomColor: '#c8bfa8',
   },
   backBtn: {
     width: 36, height: 36, borderRadius: 18,
-    backgroundColor: '#1e2555', alignItems: 'center', justifyContent: 'center',
+    backgroundColor: '#d4c9b0', alignItems: 'center', justifyContent: 'center',
   },
   backText: { color: Colors.textSecondary, fontSize: 22, fontWeight: '700', lineHeight: 24 },
   topBarTitle: { flex: 1, textAlign: 'center', color: Colors.textPrimary, fontWeight: Typography.weights.bold, fontSize: Typography.sizes.base },
-  resignBtn: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: Radius.md, backgroundColor: '#2a1010' },
+  resignBtn: { paddingHorizontal: 10, paddingVertical: 4, borderRadius: Radius.md, backgroundColor: '#f0d8d8' },
   resignText: { color: Colors.error, fontSize: Typography.sizes.sm, fontWeight: Typography.weights.semibold },
 
-  boardWrapper: { alignItems: 'center', position: 'relative', backgroundColor: '#050810' },
+  boardWrapper: { alignItems: 'center', position: 'relative', backgroundColor: '#e8e0d0' },
   checkBanner: {
     position: 'absolute',
     top: 8, alignSelf: 'center',
@@ -536,7 +536,7 @@ const styles = StyleSheet.create({
   thinkingOverlay: {
     position: 'absolute',
     bottom: 8, alignSelf: 'center',
-    backgroundColor: '#111828EE',
+    backgroundColor: '#f5f0e8cc',
     paddingHorizontal: 16, paddingVertical: 6,
     borderRadius: Radius.full, zIndex: 10,
     borderWidth: 1, borderColor: Colors.secondary + '44',
@@ -550,7 +550,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     gap: 10,
     borderTopWidth: 1,
-    borderTopColor: '#1e2555',
+    borderTopColor: '#c8bfa8',
     minHeight: 52,
   },
   coachSymbol: { fontSize: 20, fontWeight: '900', width: 28, textAlign: 'center' },
@@ -558,7 +558,7 @@ const styles = StyleSheet.create({
   coachLabel: { fontSize: Typography.sizes.base, fontWeight: Typography.weights.bold },
   coachBest: { fontSize: Typography.sizes.sm, color: Colors.textMuted },
   hintBtn: {
-    backgroundColor: '#1e2555',
+    backgroundColor: '#d4c9b0',
     paddingHorizontal: 10, paddingVertical: 6,
     borderRadius: Radius.md,
   },
@@ -570,7 +570,7 @@ const styles = StyleSheet.create({
     gap: 32,
     paddingVertical: 10,
     borderTopWidth: 1,
-    borderTopColor: '#1e2555',
+    borderTopColor: '#c8bfa8',
   },
   controlBtn: { alignItems: 'center', gap: 3 },
   controlIcon: { fontSize: 22 },
@@ -583,7 +583,7 @@ const modal = StyleSheet.create({
     borderTopLeftRadius: 28, borderTopRightRadius: 28,
     padding: 36, paddingBottom: 52,
     alignItems: 'center', gap: 12,
-    borderTopWidth: 1, borderColor: '#333',
+    borderTopWidth: 1, borderColor: '#c8bfa8',
   },
   emoji: { fontSize: 72, lineHeight: 80 },
   title: { fontSize: Typography.sizes['3xl'], fontWeight: Typography.weights.black },

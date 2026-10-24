@@ -1,49 +1,48 @@
 export const Colors = {
   // Brand
-  primary: '#58CC02',       // Duolingo green
-  primaryDark: '#46A302',
-  primaryLight: '#89E219',
-  secondary: '#1CB0F6',     // bright blue
-  secondaryDark: '#0E92C8',
-  accent: '#FF9600',        // orange
-  gold: '#FFD700',
-  purple: '#CE82FF',
+  primary: '#2a6040',       // forest green
+  primaryDark: '#1e4a30',
+  primaryLight: '#4a8060',
+  secondary: '#8a4a20',     // warm amber-brown
+  secondaryDark: '#6a3a10',
+  accent: '#c04040',        // crimson
+  gold: '#8a6020',          // antique gold
+  purple: '#604080',        // muted plum
 
   // Backgrounds
-  bg: '#131523',            // dark navy
-  bgCard: '#1E2235',
-  bgCardHover: '#252840',
-  bgBorder: '#2D3356',
+  bg: '#f5f0e8',            // warm cream parchment
+  bgCard: '#ede8de',        // slightly darker cream
+  bgCardHover: '#e3ddd0',
+  bgBorder: '#c8bfa8',      // warm tan border
 
   // Text
-  textPrimary: '#FFFFFF',
-  textSecondary: '#AFAFAF',
-  textMuted: '#6B7280',
+  textPrimary: '#1a1208',   // warm near-black
+  textSecondary: '#3d3020', // dark warm brown
+  textMuted: '#8a7a60',     // warm tan
 
   // Status
-  success: '#58CC02',
-  error: '#FF4B4B',
-  warning: '#FF9600',
-  info: '#1CB0F6',
+  success: '#2a6040',
+  error: '#c04040',
+  warning: '#8a6020',
+  info: '#2a5060',
 
   // Chess board
   boardLight: '#F0D9B5',
   boardDark: '#B58863',
-  boardHighlight: 'rgba(88, 204, 2, 0.5)',
-  boardLastMove: 'rgba(255, 150, 0, 0.4)',
-  boardSelected: 'rgba(88, 204, 2, 0.7)',
-  boardDanger: 'rgba(255, 75, 75, 0.5)',
-  boardHint: 'rgba(28, 176, 246, 0.5)',
+  boardHighlight: 'rgba(42, 96, 64, 0.4)',
+  boardLastMove: 'rgba(192, 64, 64, 0.3)',
+  boardSelected: 'rgba(42, 96, 64, 0.6)',
+  boardDanger: 'rgba(192, 64, 64, 0.5)',
+  boardHint: 'rgba(42, 80, 96, 0.5)',
 
   // XP/Progress
-  xpFill: '#58CC02',
-  xpBg: '#2D3356',
-  streakFire: '#FF9600',
-  heartFill: '#FF4B4B',
+  xpFill: '#2a6040',
+  xpBg: '#d4c9b0',
+  streakFire: '#c04040',
+  heartFill: '#c04040',
 };
 
 export const Typography = {
-  // Font families (Expo uses system fonts or loaded fonts)
   fontFamily: {
     regular: 'System',
     bold: 'System',
@@ -93,16 +92,16 @@ export const Radius = {
 
 export const Shadow = {
   card: {
-    shadowColor: '#000',
+    shadowColor: '#8a7a60',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
+    shadowOpacity: 0.2,
     shadowRadius: 8,
     elevation: 8,
   },
   button: {
-    shadowColor: '#58CC02',
+    shadowColor: '#2a6040',
     shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.4,
+    shadowOpacity: 0.3,
     shadowRadius: 12,
     elevation: 10,
   },

@@ -12,11 +12,11 @@ import { playTap } from '@/lib/sounds';
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const DIFFICULTIES: { id: Difficulty; label: string; emoji: string; desc: string; color: string }[] = [
-  { id: 'beginner', label: 'Beginner',  emoji: '🐣', desc: 'Random moves — just learning', color: '#58CC02' },
-  { id: 'easy',     label: 'Easy',      emoji: '🐥', desc: 'Simple tactics (Depth 1)',     color: '#1CB0F6' },
-  { id: 'medium',   label: 'Medium',    emoji: '🦊', desc: 'Solid play (Depth 3)',          color: '#FF9600' },
-  { id: 'hard',     label: 'Hard',      emoji: '🦁', desc: 'Stockfish (cloud)',             color: '#CE82FF' },
-  { id: 'expert',   label: 'Expert',    emoji: '🤖', desc: 'Full Stockfish analysis',       color: '#FF4B4B' },
+  { id: 'beginner', label: 'Beginner',  emoji: '🐣', desc: 'Random moves — just learning', color: '#2a6040' },
+  { id: 'easy',     label: 'Easy',      emoji: '🐥', desc: 'Simple tactics (Depth 1)',     color: '#2a4a8a' },
+  { id: 'medium',   label: 'Medium',    emoji: '🦊', desc: 'Solid play (Depth 3)',          color: '#8a4a10' },
+  { id: 'hard',     label: 'Hard',      emoji: '🦁', desc: 'Stockfish (cloud)',             color: '#604080' },
+  { id: 'expert',   label: 'Expert',    emoji: '🤖', desc: 'Full Stockfish analysis',       color: '#8a2020' },
 ];
 
 const TIME_CONTROLS: { label: string; sub: string; seconds: number; increment: number }[] = [
@@ -57,7 +57,7 @@ export default function PlayScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
       <SafeAreaView style={styles.fill} edges={['top']}>
         <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
 
@@ -141,19 +141,19 @@ export default function PlayScreen() {
               <Switch
                 value={coachOn}
                 onValueChange={setCoachOn}
-                trackColor={{ false: '#2a3060', true: Colors.primary + '88' }}
+                trackColor={{ false: '#c8bfa8', true: Colors.primary + '88' }}
                 thumbColor={coachOn ? Colors.primary : '#555'}
               />
             </View>
             {coachOn && (
               <View style={styles.evalLegend}>
                 {[
-                  { label: 'Best',       color: '#00c853', symbol: '✦' },
-                  { label: 'Excellent',  color: '#69f0ae', symbol: '✦' },
-                  { label: 'Good',       color: '#b9f6ca', symbol: '▲' },
-                  { label: 'Inaccuracy', color: '#FFD700', symbol: '△' },
-                  { label: 'Mistake',    color: '#FF9600', symbol: '✗' },
-                  { label: 'Blunder',    color: '#FF4B4B', symbol: '✗✗' },
+                  { label: 'Best',       color: '#1a6040', symbol: '✦' },
+                  { label: 'Excellent',  color: '#2a7050', symbol: '✦' },
+                  { label: 'Good',       color: '#3a8060', symbol: '▲' },
+                  { label: 'Inaccuracy', color: '#7a5a10', symbol: '△' },
+                  { label: 'Mistake',    color: '#8a4a10', symbol: '✗' },
+                  { label: 'Blunder',    color: '#8a2020', symbol: '✗✗' },
                 ].map((e) => (
                   <View key={e.label} style={styles.evalItem}>
                     <Text style={[styles.evalSymbol, { color: e.color }]}>{e.symbol}</Text>
@@ -197,7 +197,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 // ─── Styles ───────────────────────────────────────────────────────────────────
 
 const styles = StyleSheet.create({
-  root: { flex: 1, backgroundColor: '#080c18' },
+  root: { flex: 1, backgroundColor: Colors.bg },
   fill: { flex: 1 },
   content: { padding: Spacing['2xl'], gap: Spacing.xl },
 

@@ -9,14 +9,14 @@ export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <SafeAreaProvider>
-        <StatusBar style="light" />
+        <StatusBar style="dark" />
         <Stack screenOptions={{ headerShown: false, contentStyle: { backgroundColor: Colors.bg } }}>
           <Stack.Screen name="(auth)" />
           <Stack.Screen name="(tabs)" />
           <Stack.Screen name="onboarding" />
           <Stack.Screen name="lesson/[id]" options={{ animation: 'slide_from_right' }} />
           <Stack.Screen name="puzzle/[id]" options={{ animation: 'slide_from_bottom' }} />
-          <Stack.Screen name="game/index"  options={{ animation: 'slide_from_bottom', contentStyle: { backgroundColor: '#080c18' } }} />
+          <Stack.Screen name="game/index"  options={{ animation: 'slide_from_bottom', contentStyle: { backgroundColor: Colors.bg } }} />
         </Stack>
       </SafeAreaProvider>
     </GestureHandlerRootView>

@@ -6,7 +6,7 @@ export const CURRICULUM: Unit[] = [
     title: 'Board Basics',
     description: 'Learn how pieces move and the rules of chess',
     icon: '♟️',
-    color: '#58CC02',
+    color: '#2a6040',
     level: 1,
     requiredXP: 0,
     lessons: [
@@ -60,7 +60,7 @@ export const CURRICULUM: Unit[] = [
             content: 'This pawn on e2 can move to e3 or e4 (its first move). It captures on d3 or f3.',
             fen: '8/8/8/8/8/8/4P3/8 w - - 0 1',
             highlightSquares: ['e3', 'e4', 'd3', 'f3'],
-            arrows: [{ from: 'e2', to: 'e4', color: '#58CC02' }],
+            arrows: [{ from: 'e2', to: 'e4', color: '#2a6040' }],
           },
           {
             type: 'quiz',
@@ -156,7 +156,7 @@ export const CURRICULUM: Unit[] = [
     title: 'Piece Values',
     description: 'Learn the value of every piece and when to trade',
     icon: '⚖️',
-    color: '#1CB0F6',
+    color: '#2a4a8a',
     level: 2,
     requiredXP: 100,
     lessons: [
@@ -205,7 +205,7 @@ export const CURRICULUM: Unit[] = [
     title: 'Basic Tactics',
     description: 'Forks, pins, skewers, and discovered attacks',
     icon: '⚔️',
-    color: '#FF9600',
+    color: '#8a4a10',
     level: 3,
     requiredXP: 250,
     lessons: [
@@ -227,7 +227,7 @@ export const CURRICULUM: Unit[] = [
             content: 'The knight on e5 forks both the black king on g6 and the queen on c6. Black must move the king — and lose the queen.',
             fen: '8/8/2q3k1/4N3/8/8/8/8 w - - 0 1',
             highlightSquares: ['g6', 'c6'],
-            arrows: [{ from: 'e5', to: 'g6', color: '#FF9600' }, { from: 'e5', to: 'c6', color: '#FF9600' }],
+            arrows: [{ from: 'e5', to: 'g6', color: '#8a4a10' }, { from: 'e5', to: 'c6', color: '#8a4a10' }],
           },
           {
             type: 'quiz',
@@ -259,7 +259,7 @@ export const CURRICULUM: Unit[] = [
             title: 'Absolute Pin',
             content: 'The white bishop on b3 pins the black knight on d5 against the black king on f7. The knight cannot legally move!',
             fen: '8/5k2/8/3n4/8/1B6/8/8 w - - 0 1',
-            arrows: [{ from: 'b3', to: 'f7', color: '#FF4B4B' }],
+            arrows: [{ from: 'b3', to: 'f7', color: '#8a2020' }],
           },
         ],
       },
@@ -298,7 +298,7 @@ export const CURRICULUM: Unit[] = [
     title: 'Opening Principles',
     description: 'Control the center and develop your pieces',
     icon: '🏰',
-    color: '#CE82FF',
+    color: '#604080',
     level: 4,
     requiredXP: 450,
     lessons: [
@@ -369,7 +369,7 @@ export const CURRICULUM: Unit[] = [
     title: 'Endgame Essentials',
     description: 'Win won positions — king, pawns, and basic checkmates',
     icon: '👑',
-    color: '#FFD700',
+    color: '#7a5a10',
     level: 5,
     requiredXP: 700,
     lessons: [
@@ -405,7 +405,7 @@ export const CURRICULUM: Unit[] = [
             content: 'The white pawn on e5 is passed — no black pawns can stop it from queening.',
             fen: '4k3/8/8/4P3/8/8/8/4K3 w - - 0 1',
             highlightSquares: ['e6', 'e7', 'e8'],
-            arrows: [{ from: 'e5', to: 'e8', color: '#FFD700' }],
+            arrows: [{ from: 'e5', to: 'e8', color: '#7a5a10' }],
           },
         ],
       },
@@ -430,7 +430,7 @@ export const CURRICULUM: Unit[] = [
     title: 'Strategic Thinking',
     description: 'Plans, pawn structure, weak squares, and more',
     icon: '🧠',
-    color: '#FF4B4B',
+    color: '#8a2020',
     level: 6,
     requiredXP: 1000,
     lessons: [
@@ -467,14 +467,14 @@ export const CURRICULUM: Unit[] = [
 ];
 
 export const PUZZLE_THEMES = [
-  { id: 'mateIn1', label: 'Mate in 1', icon: '💀', color: '#FF4B4B' },
-  { id: 'mateIn2', label: 'Mate in 2', icon: '💀', color: '#FF4B4B' },
-  { id: 'fork', label: 'Fork', icon: '⚔️', color: '#FF9600' },
-  { id: 'pin', label: 'Pin', icon: '📌', color: '#CE82FF' },
-  { id: 'skewer', label: 'Skewer', icon: '🗡️', color: '#1CB0F6' },
-  { id: 'discoveredAttack', label: 'Discovery', icon: '💥', color: '#58CC02' },
-  { id: 'hangingPiece', label: 'Hanging Piece', icon: '🎯', color: '#FFD700' },
-  { id: 'endgame', label: 'Endgame', icon: '👑', color: '#58CC02' },
+  { id: 'mateIn1', label: 'Mate in 1', icon: '💀', color: '#8a2020' },
+  { id: 'mateIn2', label: 'Mate in 2', icon: '💀', color: '#8a2020' },
+  { id: 'fork', label: 'Fork', icon: '⚔️', color: '#8a4a10' },
+  { id: 'pin', label: 'Pin', icon: '📌', color: '#604080' },
+  { id: 'skewer', label: 'Skewer', icon: '🗡️', color: '#2a4a8a' },
+  { id: 'discoveredAttack', label: 'Discovery', icon: '💥', color: '#2a6040' },
+  { id: 'hangingPiece', label: 'Hanging Piece', icon: '🎯', color: '#7a5a10' },
+  { id: 'endgame', label: 'Endgame', icon: '👑', color: '#2a6040' },
 ];
 
 export const XP_PER_LEVEL = 200;

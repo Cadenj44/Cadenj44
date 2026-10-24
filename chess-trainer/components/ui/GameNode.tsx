@@ -58,10 +58,10 @@ export default memo(function GameNode({
   const isMastered = status === 'mastered';
   const isComplete = status === 'complete';
 
-  const baseColor  = isLocked ? '#4a4e7a' : unit.color;
-  const lightColor = isLocked ? '#6a6ea0' : adjustHex(unit.color, 55);
-  const darkColor  = isLocked ? '#1e2050' : adjustHex(unit.color, -60);
-  const shadowColor = isLocked ? '#0f1030' : adjustHex(unit.color, -90);
+  const baseColor  = isLocked ? '#b8a888' : unit.color;
+  const lightColor = isLocked ? '#d4c9b0' : adjustHex(unit.color, 55);
+  const darkColor  = isLocked ? '#8a7a60' : adjustHex(unit.color, -60);
+  const shadowColor = isLocked ? '#6a5a40' : adjustHex(unit.color, -90);
 
   const starCount = isMastered ? 3 : isComplete ? 2 : isActive ? 1 : 0;
 
@@ -215,7 +215,7 @@ export default memo(function GameNode({
         {[1, 2, 3].map((s) => (
           <Text
             key={s}
-            style={[styles.star, { color: s <= starCount ? '#FFD700' : '#2a3060' }]}
+            style={[styles.star, { color: s <= starCount ? '#FFD700' : '#c8bfa8' }]}
           >
             ★
           </Text>

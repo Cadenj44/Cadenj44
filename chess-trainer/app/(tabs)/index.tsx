@@ -98,7 +98,7 @@ export default function MapScreen() {
 
   return (
     <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar barStyle="dark-content" />
 
       {/* Center column on wide screens */}
       <View style={[styles.column, { maxWidth: MAX_MAP_W }]}>
@@ -116,7 +116,7 @@ export default function MapScreen() {
           >
             {/* Sky gradient background */}
             <LinearGradient
-              colors={['#080c18', '#0c1230', '#111840', '#0d1535']}
+              colors={['#f5f0e8', '#ede8de', '#e8e0d0', '#f0e8da']}
               locations={[0, 0.3, 0.7, 1]}
               style={StyleSheet.absoluteFill}
             />
@@ -151,7 +151,7 @@ export default function MapScreen() {
                 <Path
                   key={`road-${i}`}
                   d={d}
-                  stroke="#1e2555"
+                  stroke="#c8bfa8"
                   strokeWidth={26}
                   strokeLinecap="round"
                   fill="none"
@@ -163,7 +163,7 @@ export default function MapScreen() {
                 <Path
                   key={`edge-${i}`}
                   d={d}
-                  stroke="#2a3270"
+                  stroke="#a89878"
                   strokeWidth={20}
                   strokeLinecap="round"
                   fill="none"
@@ -179,7 +179,7 @@ export default function MapScreen() {
                   <Path
                     key={`dash-${i}`}
                     d={d}
-                    stroke="#3d4880"
+                    stroke="#8a7a60"
                     strokeWidth={5}
                     strokeLinecap="round"
                     strokeDasharray="10 18"
@@ -267,7 +267,7 @@ export default function MapScreen() {
                   <Text
                     style={[
                       styles.unitLabelText,
-                      { color: status === 'locked' ? '#404870' : unit.color },
+                      { color: status === 'locked' ? '#8a7a60' : unit.color },
                     ]}
                     numberOfLines={2}
                   >
@@ -287,7 +287,7 @@ export default function MapScreen() {
             onPress={() => { playTap(); router.push('/(tabs)/practice'); }}
           >
             <LinearGradient
-              colors={[Colors.secondary, '#0a7ab5']}
+              colors={[Colors.primary, Colors.primaryDark]}
               start={{ x: 0, y: 0 }} end={{ x: 1, y: 0 }}
               style={styles.quickPillGradient}
             >
@@ -324,7 +324,7 @@ function MapHUD({
 
   return (
     <LinearGradient
-      colors={['#080c18dd', '#080c1800']}
+      colors={['#f5f0e8ee', '#f5f0e800']}
       style={styles.hud}
     >
       <View style={styles.hudRow}>
@@ -418,7 +418,7 @@ const Star = memo(function Star({
         width: size,
         height: size,
         borderRadius: size / 2,
-        backgroundColor: '#fff',
+        backgroundColor: '#8a6020',
         opacity: anim,
       }}
     />
@@ -484,7 +484,7 @@ const FloatPiece = memo(function FloatPiece({
         left: x,
         top: y,
         fontSize: size,
-        color: '#ffffff',
+        color: '#8a7a60',
         opacity,
         transform: [{ translateY }],
         pointerEvents: 'none',
@@ -500,7 +500,7 @@ const FloatPiece = memo(function FloatPiece({
 const styles = StyleSheet.create({
   root: {
     flex: 1,
-    backgroundColor: '#080c18',
+    backgroundColor: '#f5f0e8',
     alignItems: 'center',
   },
   column: {
@@ -526,14 +526,14 @@ const styles = StyleSheet.create({
   brandName: {
     fontSize: Typography.sizes.base,
     fontWeight: Typography.weights.black,
-    color: '#fff',
+    color: Colors.textPrimary,
     letterSpacing: 0.3,
   },
   xpRow: { flexDirection: 'row', alignItems: 'center', gap: 6, marginTop: 3 },
   xpTrack: {
     width: 90,
     height: 8,
-    backgroundColor: '#1e2555',
+    backgroundColor: '#d4c9b0',
     borderRadius: 4,
     overflow: 'hidden',
   },
@@ -575,15 +575,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 3,
-    backgroundColor: '#1e2555',
+    backgroundColor: '#ede8de',
     borderRadius: Radius.full,
     paddingHorizontal: 8,
     paddingVertical: 5,
     borderWidth: 1,
-    borderColor: '#2a3270',
+    borderColor: '#c8bfa8',
   },
   statPillIcon: { fontSize: 14 },
-  statPillText: { fontSize: 13, fontWeight: Typography.weights.bold, color: '#fff' },
+  statPillText: { fontSize: 13, fontWeight: Typography.weights.bold, color: Colors.textPrimary },
 
   // Unit labels
   unitLabel: {
@@ -597,7 +597,7 @@ const styles = StyleSheet.create({
   },
   unitLevelText: {
     fontSize: 9,
-    color: '#404870',
+    color: Colors.textMuted,
     fontWeight: Typography.weights.semibold,
     marginTop: 1,
   },
